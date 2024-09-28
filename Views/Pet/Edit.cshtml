@@ -1,0 +1,18 @@
+@model midterm_project.Models.Pet
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<form asp-asp-controller="Pet" asp-action="Edit" method="post">
+    <h1 class="display-4 text-center mb-5">Edit Pet</h1>
+
+    <partial name="_PetInput" model="Model" />
+
+    <input type="hidden" asp-for="PetId"/>
+    <input type="submit" class="btn btn-primary float-end" value="Save">
+    <a class="btn btn-primary btn-primary" asp-controller="Pet" asp-action="List">Back</a>
+    <div class="text-center">
+        <a class="btn btn-primary btn-danger" asp-controller="Pet" asp-action="Delete" asp-route-id="@Model.PetId">Delete</a>
+    </div>
+</form>

@@ -1,0 +1,85 @@
+@model midterm_project.Models.Pet
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="form-group">
+            <!-- Name Field -->
+            <div class="row m-3 align-items-center">
+                <div class="col-md-4">
+                    <label class="control-label" asp-for="Name">Name: </label>
+                </div>
+                <div class="col-md-8">
+                    <input class="form-control" asp-for="Name"/>
+                    <div class="text-danger">
+                        <span asp-validation-for="Name">The Name is Required</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image URL Field -->
+            <div class="row m-3 align-items-center">
+                <div class="col-md-4">
+                    <label class="control-label" asp-for="ImgUrl">Image URL: </label>
+                </div>
+                <div class="col-md-8">
+                    <textarea class="form-control" asp-for="ImgUrl"></textarea>
+                    <div class="text-danger">
+                        <span asp-validation-for="ImgUrl">The Image URL is Required</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Type Field -->
+            <div class="row m-3 align-items-center">
+                <div class="col-md-4">
+                    <label class="control-label" asp-for="Type">Type Of Animal: </label>
+                </div>
+                <div class="col-md-8">
+                    <input class="form-control" asp-for="Type"/>
+                    <div class="text-danger">
+                        <span asp-validation-for="Type">The Type is Required</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Description Field -->
+            <div class="row m-3 align-items-center">
+                <div class="col-md-4">
+                    <label class="control-label" asp-for="Description">Description: </label>
+                </div>
+                <div class="col-md-8">
+                    <input class="form-control" asp-for="Description"/>
+                    <div class="text-danger">
+                        <span asp-validation-for="Description">The Description is Required</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Age Field -->
+            <div class="row m-3 align-items-center">
+                <div class="col-md-4">
+                    <label class="control-label" asp-for="Age">Age: </label>
+                </div>
+                <div class="col-md-8">
+                    <input class="form-control" asp-for="Age"/>
+                    <div class="text-danger">
+                        <span asp-validation-for="Age">The Age of the animal is Required</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Price Field -->
+            <div class="row m-3 align-items-center">
+                <div class="col-md-4">
+                    <label class="control-label" asp-for="Price">Price: </label>
+                </div>
+                <div class="col-md-8">
+                    <input class="form-control" asp-for="Price"/>
+                    <div class="text-danger">
+                        <span asp-validation-for="Price">The Price is Required</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

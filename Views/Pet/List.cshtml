@@ -1,0 +1,35 @@
+@model IEnumerable<midterm_project.Models.Pet>
+
+@{
+    ViewData["Title"] = "List";
+}
+
+<div class="container mt-5">
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Welcome to the Pet Adoption Center</h1>
+        <p class="lead">Find your new best friend today! Browse our available pets for adoption.</p>
+    </div>
+
+    <div class="row">
+        @foreach (var pet in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="@pet.ImgUrl" class="card-img-top" alt="@pet.Name">
+                    <div class="card-body">
+                        <h5 class="card-title">@pet.Name</h5>
+                        <div class="d-flex justify-content-between">
+                            <a href="@Url.Action("Detail", new { id = pet.PetId })" class="btn btn-primary">Details</a>
+                            <a href="@Url.Action("Edit", new { id = pet.PetId })" class="btn btn-warning">Edit</a>
+                            <form asp-action="Delete" asp-route-id="@pet.PetId" method="post">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <a href="@Url.Action("New")" class="btn btn-primary">Create New</a>
+</div>

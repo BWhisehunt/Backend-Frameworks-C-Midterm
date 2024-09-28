@@ -1,0 +1,15 @@
+@model midterm_project.Models.Pet
+
+@{
+    ViewData["Title"] = "New Pet";
+}
+
+<form asp-controller="Pet" asp-action="New" method="post">
+    <h1 class="display-4 text-center mb-5">Create New Pet</h1>
+
+    <partial name="_PetInput" model="Model" />
+
+    <input type="submit" class="btn btn-sm btn-primary float-end" value="Save">
+</form>
+
+<a class="btn btn-sm btn-primary" asp-controller="Pet" asp-action="List">Back</a>
